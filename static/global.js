@@ -8,7 +8,7 @@ function $$ (selector, context = document) {
 
 //create nav on each page
 let pages = [
-	{url: "/", title: "Home"},
+	{url: ".", title: "Home"},
 	{url: "projects", title: "Projects"},
 	{url: "contact", title: "Contact"},
     {url: "resume", title: "Resume"},
