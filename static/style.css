@@ -13,45 +13,6 @@ body {
     padding: 1em;
    }
 
-ul.nav {
-  display: contents;
-}
-   
-li.nav {
-  display: contents;
-}
-
-nav {
-  display: flex;
-  margin-bottom: 3em;
-  border-bottom-width: 0.1em;
-  border-bottom-style: solid;
-  --border-color: oklch(50% 10% 200 / 40%);
-  border-bottom-color: var(--border-color);
-}
-
-a {
-  flex: 1;
-  text-decoration: none;
-  color: inherit;
-  text-align: center;
-  padding: 0.5em;
-}
-
-a.current {
-  border-bottom-width: 0.3em;
-  border-bottom-style: solid;
-  border-bottom-color: var(--border-color);
-  padding-bottom: 0.2em;
-}
-
-a:hover {
-  border-bottom-width: 0.3em;
-  border-bottom-style: solid;
-  padding-bottom: 0.2em;
-  border-bottom-color: color-mix(in oklch, var(--color-accent), canvas 85%);
-}
-
 form {
   display: grid;
   grid-template-columns: auto 1fr;
