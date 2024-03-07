@@ -4,10 +4,10 @@
     import { page } from '$app/stores';
 
     let pages = [
-        {url: "/", title: "Home"},
-        {url: "/projects", title: "Projects"},
-        {url: "/contact", title: "Contact"},
-        {url: "/resume", title: "Resume"},
+        {url: "./", title: "Home"},
+        {url: "./projects", title: "Projects"},
+        {url: "./contact", title: "Contact"},
+        {url: "./resume", title: "Resume"},
         {url: "https://github.com/cammyt5", title: "Github"},
     ];
 
@@ -73,7 +73,7 @@
 <nav>
     {#each pages as p }
         <a href={ p.url } 
-           class:current={$page.route.id === p.url}
+           class:current={"." + $page.route.id === p.url}
            target={ p.url.startsWith("http") ? "_blank" : null }>
                 { p.title }
         </a>
