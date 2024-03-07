@@ -95,16 +95,3 @@ h6 {
 p.resume {
   margin: 0;
 }
-
-label.color-scheme {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font: inherit;
-  font-size: 80%;
-}
-
-select {
-  font: inherit;
-  font-size: 80%;
-}

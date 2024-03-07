@@ -6,6 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="%sveltekit.assets%/style.css" />
 		<script src="%sveltekit.assets%/global.js" type="module"></script>
+		<!-- prevent FOUC by loading color scheme first -->
+		<script>
+			let root = document.documentElement;
+			let colorScheme = localStorage.colorScheme ?? "light dark";
+			root.style.setProperty("color-scheme", colorScheme);
+		</script>		
 		<title>Cameron Dougal's Webpage</title>
 		%sveltekit.head%
 	</head>

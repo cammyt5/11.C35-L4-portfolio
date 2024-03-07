@@ -1,4 +1,6 @@
 <script>
+
+    //nav bar logic
     import { page } from '$app/stores';
 
     let pages = [
@@ -8,6 +10,18 @@
         {url: "/resume", title: "Resume"},
         {url: "https://github.com/cammyt5", title: "Github"},
     ];
+
+    //theme selector logic
+    let localStorage = globalThis.localStorage ?? {};
+    let colorScheme = localStorage.colorScheme ?? "light-dark";
+
+    // dynamically read colorScheme from localStorage
+    $: localStorage.colorScheme = colorScheme;
+
+    // dynamically write colorScheme to localStorage
+    let root = globalThis?.document?.documentElement;
+    $: root?.style.setProperty("color-scheme", colorScheme);
+
 </script>
 
 <style>
@@ -41,6 +55,19 @@
         padding-bottom: 0.2em;
         border-bottom-color: color-mix(in oklch, var(--color-accent), canvas 85%);
     }
+
+    label.color-scheme {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font: inherit;
+        font-size: 80%;
+    }
+
+    select {
+        font: inherit;
+        font-size: 80%;
+    }
 </style>
 
 <nav>
@@ -52,5 +79,14 @@
         </a>
     {/each}
 </nav>
+
+<label class="color-scheme"> 
+    Theme:
+    <select bind:value={ colorScheme }>
+        <option value="light dark">Automatic</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
 
 <slot />
