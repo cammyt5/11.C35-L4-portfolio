@@ -50,7 +50,6 @@
             <dt>Followers</dt>
             <dd>{data.followers}</dd>
         </dl>
-
 	{:catch error}
 		<p class="error">
 			Something went wrong: {error.message}
